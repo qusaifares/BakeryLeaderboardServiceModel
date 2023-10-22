@@ -36,13 +36,22 @@ paths:
         '500':
           description: Internal server error
 
-security:
-  - bearerAuth: []
-
 components:
   schemas:
     Player:
       type: object
+      required:
+        - id
+        - name
+        - wins
+        - losses
+        - winRate
+        - rank
+        - rankValue
+        - tier
+        - division
+        - leaguePoints
+        - currentStreak
       properties:
         id:
           type: string
@@ -58,7 +67,7 @@ components:
           type: integer
           format: int32
           description: Number of losses
-        winrate:
+        winRate:
           type: number
           format: float
           readOnly: true
@@ -94,6 +103,4 @@ components:
           items:
             $ref: '#/components/schemas/Player'
           description: List of players
-  securitySchemes:
-    bearerAuth:
-      $ref: '../../../shared/components.yaml#/securitySchemes/bearerAuth'
+          
