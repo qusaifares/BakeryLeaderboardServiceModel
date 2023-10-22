@@ -1,0 +1,100 @@
+openapi: 3.0.0
+info:
+  title: Leaderboard API
+  version: 1.0.0
+  description: Leaderboard API to get all players' data
+  # termsOfService: 'http://example.com/terms/'
+  contact:
+    email: support@leaderboard.app
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  - url: https://leaderboard.app/api/v1
+    description: Production server
+
+paths:
+  /leaderboard:
+    get:
+      tags:
+        - Leaderboard
+      summary: Gets all player data to display in table
+      operationId: getLeaderboard
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeaderboardResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+        '500':
+          description: Internal server error
+
+security:
+  - bearerAuth: []
+
+components:
+  schemas:
+    Player:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The player ID
+        name:
+          type: string
+          description: The player's name
+        wins:
+          type: integer
+          format: int32
+          description: Number of wins
+        losses:
+          type: integer
+          format: int32
+          description: Number of losses
+        winrate:
+          type: number
+          format: float
+          readOnly: true
+          description: Player's winning rate, calculated as wins divided by total games played.
+        rank:
+          type: string
+          description: Overall rank string
+        rankValue:
+          type: integer
+          format: int32
+          description: Overall rank value
+        tier:
+          type: string
+          enum: ["", "IRON", "BRONZE", "SILVER", "GOLD", "PLATINUM", "EMERALD", "DIAMOND", "MASTER", "GRANDMASTER", "CHALLENGER"]
+          description: Rank solo queue tier
+        division:
+          type: string
+          enum: ["", "I", "II", "III", "IV"]
+          description: Ranked solo queue division
+        leaguePoints:
+          type: integer
+          format: int32
+          description: Ranked solo queue league points
+        currentStreak:
+          type: integer
+          format: int32 
+          description: Current win/loss streak
+    LeaderboardResponse:
+      type: object
+      properties:
+        players:
+          type: array
+          items:
+            $ref: '#/components/schemas/Player'
+          description: List of players
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
