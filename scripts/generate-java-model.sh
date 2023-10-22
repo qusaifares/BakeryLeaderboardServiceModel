@@ -12,11 +12,12 @@ openapi-generator-cli generate \
 -i $SPEC_PATH \
 -g java \
 -o $OUTPUT_PATH \
--Dapis=None \
--DsupportingFiles=None \
--DmodelDocs=false \
--DmodelTests=false \
--DmodelPackage=com.bakeryleaderboard.service.model
+--additional-properties apis=None \
+--additional-properties supportingFiles=None \
+--additional-properties modelDocs=false \
+--additional-properties modelTests=false \
+--additional-properties modelPackage=com.bakeryleaderboard.service.model
+
 
 if [ $? -eq 0 ]; then
     echo "Java SDK generated successfully!"
