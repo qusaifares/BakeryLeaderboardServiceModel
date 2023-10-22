@@ -70,7 +70,6 @@ components:
         winRate:
           type: number
           format: float
-          readOnly: true
           description: Player's winning rate, calculated as wins divided by total games played.
         rank:
           type: string
@@ -103,4 +102,3 @@ components:
           items:
             $ref: '#/components/schemas/Player'
           description: List of players
-          
