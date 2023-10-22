@@ -6,6 +6,7 @@
   "scripts": {
     "generate-ts-sdk": "node ./scripts/generate-ts-sdk.js",
     "generate-java-model": "sh ./scripts/generate-java-model.sh",
+    "validate": "node ./tools/validateSpecs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Qusai Fares <qusaifares@gmail.com> (https://qusaifares.com/)",

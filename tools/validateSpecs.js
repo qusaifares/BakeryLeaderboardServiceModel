@@ -3,7 +3,7 @@ const path = require('path');
 
 // List all your API specs here
 const specs = [
-  './services/leaderboard-api/v1/openapi.yaml',
+  '../services/leaderboard-api/v1/openapi.yaml',
 ];
 
 async function validateSpec(filePath) {

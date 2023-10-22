@@ -12,6 +12,8 @@ info:
 servers:
   - url: https://leaderboard.app/api/v1
     description: Production server
+  - url: https://localhost:8080/api/v1
+    description: Development server
 
 paths:
   /leaderboard:
@@ -94,7 +96,4 @@ components:
           description: List of players
   securitySchemes:
     bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-
+      $ref: '../../../shared/components.yaml#/securitySchemes/bearerAuth'
