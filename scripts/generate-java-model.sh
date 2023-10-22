@@ -12,7 +12,6 @@ openapi-generator-cli generate \
 -i $SPEC_PATH \
 -g java \
 -o $OUTPUT_PATH \
---skip-tests \
 --additional-properties apis=None \
 --additional-properties supportingFiles=None \
 --additional-properties modelDocs=false \
