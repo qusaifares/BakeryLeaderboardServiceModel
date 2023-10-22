@@ -16,7 +16,7 @@ openapi-generator-cli generate \
 --additional-properties supportingFiles=None \
 --additional-properties modelDocs=false \
 --additional-properties modelTests=false \
---additional-properties modelPackage=com.bakeryleaderboard.service.model
+--additional-properties modelPackage=com.bakeryleaderboard.service.servicemodel
 
 
 if [ $? -eq 0 ]; then
