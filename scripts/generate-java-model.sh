@@ -11,7 +11,7 @@ echo "Generating Java SDK..."
 openapi-generator-cli generate \
 -i $SPEC_PATH \
 -g java \
--o $OUTPUT_PATH
+-o $OUTPUT_PATH \
 -D models \
 -D modelDocs=false \
 -D modelTests=false \
