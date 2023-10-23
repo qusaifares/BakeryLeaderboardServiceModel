@@ -48,6 +48,9 @@ components:
         - wins
         - losses
         - winRate
+        - kills
+        - deaths
+        - assists
         - rank
         - rankValue
         - tier
@@ -84,6 +87,18 @@ components:
           type: number
           format: float
           description: Player's winning rate, calculated as wins divided by total games played.
+        kills:
+          type: integer
+          format: int32
+          description: Total kills
+        deaths:
+          type: integer
+          format: int32
+          description: Total deaths
+        assists:
+          type: integer
+          format: int32
+          description: Total assists
         rank:
           type: string
           description: Overall rank string
