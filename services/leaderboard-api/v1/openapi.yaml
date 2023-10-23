@@ -42,7 +42,9 @@ components:
       type: object
       required:
         - id
+        - place
         - name
+        - gamesPlayed
         - wins
         - losses
         - winRate
@@ -63,6 +65,10 @@ components:
         name:
           type: string
           description: The player's name
+        gamesPlayed:
+          type: integer
+          format: int32
+          description: Number of games played
         wins:
           type: integer
           format: int32
