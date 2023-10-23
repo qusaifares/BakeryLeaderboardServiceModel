@@ -56,6 +56,10 @@ components:
         id:
           type: string
           description: The player ID
+        place:
+          type: integer
+          format: int32
+          description: Place in leaderboard
         name:
           type: string
           description: The player's name
