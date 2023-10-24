@@ -54,8 +54,10 @@ components:
         - killsPerGame
         - deathsPerGame
         - assistsPerGame
+        - kda
         - rank
         - rankValue
+        - rankLastUpdated
         - tier
         - division
         - leaguePoints
@@ -125,6 +127,9 @@ components:
           type: integer
           format: int32
           description: Overall rank value
+        rankLastUpdated:
+          type: string
+          description: String representing last rank update date
         tier:
           type: string
           enum: ["", "IRON", "BRONZE", "SILVER", "GOLD", "PLATINUM", "EMERALD", "DIAMOND", "MASTER", "GRANDMASTER", "CHALLENGER"]
