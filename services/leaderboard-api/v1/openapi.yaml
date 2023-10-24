@@ -62,6 +62,7 @@ components:
         - division
         - leaguePoints
         - currentStreak
+        - isInActiveGame
       properties:
         id:
           type: string
@@ -146,6 +147,17 @@ components:
           type: integer
           format: int32 
           description: Current win/loss streak
+        isInActiveGame:
+          type: boolean
+          description: Boolean representing if player is in game
+        activeGameChampionId:
+          type: integer
+          format: int32
+          description: Boolean representing if player is in game
+        activeGameStartTime:
+          type: integer
+          format: int64
+          description: Active game epoch milliseconds start time
     LeaderboardResponse:
       type: object
       properties:
