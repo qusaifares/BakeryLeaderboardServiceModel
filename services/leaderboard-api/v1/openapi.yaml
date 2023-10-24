@@ -51,6 +51,9 @@ components:
         - kills
         - deaths
         - assists
+        - killsPerGame
+        - deathsPerGame
+        - assistsPerGame
         - rank
         - rankValue
         - tier
@@ -99,6 +102,18 @@ components:
           type: integer
           format: int32
           description: Total assists
+        killsPerGame:
+          type: number
+          format: float
+          description: Kills per game
+        deathsPerGame:
+          type: number
+          format: float
+          description: Deaths per game
+        assistsPerGame:
+          type: number
+          format: float
+          description: Assists per game
         kda:
           type: number
           format: float
