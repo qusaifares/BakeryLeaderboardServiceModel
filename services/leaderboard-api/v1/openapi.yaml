@@ -99,6 +99,10 @@ components:
           type: integer
           format: int32
           description: Total assists
+        kda:
+          type: number
+          format: float
+          description: KDA ratio
         rank:
           type: string
           description: Overall rank string

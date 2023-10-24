@@ -1,7 +1,7 @@
 {
   "name": "bakeryleaderboardservicemodel",
   "version": "1.0.0",
-  "description": "",
+  "description": "Service model and client generator",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./output",
