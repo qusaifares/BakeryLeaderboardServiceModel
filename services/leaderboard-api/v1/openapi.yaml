@@ -160,6 +160,10 @@ components:
     LeaderboardResponse:
       type: object
       properties:
+        timestamp:
+          type: integer
+          format: int64
+          description: Epoch timestamp of response
         players:
           type: array
           items:
