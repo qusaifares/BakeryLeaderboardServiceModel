@@ -41,8 +41,12 @@ components:
     ActiveGame:
       type: object
       required:
+        - summonerId
         - isInActiveGame
       properties:
+        summonerId:
+          type: string
+          description: Summoner ID
         isInActiveGame:
           type: boolean
           description: Boolean representing if player is in game
