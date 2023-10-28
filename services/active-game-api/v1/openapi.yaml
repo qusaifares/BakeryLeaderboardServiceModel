@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: Active Game API
+  version: 1.0.0
+  description: Active Game API to get all player's active game data
+  # termsOfService: 'http://example.com/terms/'
+  contact:
+    email: support@leaderboard.app
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  - url: https://wkwjuwml9h.execute-api.us-east-2.amazonaws.com/prod
+    description: Production server
+  - url: https://localhost:8080/api/v1
+    description: Development server
+
+paths:
+  /active-game:
+    get:
+      tags:
+        - Active Game
+      summary: Gets all player data to display in table
+      operationId: getAllActiveGames
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActiveGamesResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    ActiveGame:
+      type: object
+      required:
+        - isInActiveGame
+      properties:
+        isInActiveGame:
+          type: boolean
+          description: Boolean representing if player is in game
+        activeGameChampionImage:
+          type: string
+          description: Image of active player's champion
+        activeGameStartTime:
+          type: integer
+          format: int64
+          description: Active game epoch milliseconds start time
+        gameDetailsLink:
+          type: string
+          description: Link to match details
+    ActiveGamesResponse:
+      type: object
+      required:
+      - timestamp
+      - activeGames
+      properties:
+        timestamp:
+          type: integer
+          format: int64
+          description: Epoch timestamp of response
+        activeGames:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActiveGame'
+          description: List of active games
